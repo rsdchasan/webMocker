@@ -1,5 +1,5 @@
 # webMocker
-1) Clone the repo
+1) Clone the repo<br>
 2) Add index.js file in the same repo with the below two lines in it,
 	var mock_server = require('./mock_server')
 	mock_server.run()
