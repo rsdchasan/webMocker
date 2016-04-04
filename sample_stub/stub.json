@@ -1,0 +1,153 @@
+[
+  {
+    "request": {
+      "method": "POST",
+      "url": "/.*",
+      "bodyPatterns": [
+            { "matches": ".*allRoles.*" }
+        ]
+    },
+    "response": {
+      "status": 200,
+      "body": "<userDetails><isValidToken>true</isValidToken><userId>23</userId><firstName>User</firstName><lastName>Name</lastName><emailId>testuser@email.com</emailId></userDetails>",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "url": "/.*",
+      "bodyPatterns": [
+            { "matches": ".*sales.*" }
+        ]
+    },
+    "response": {
+      "status": 200,
+      "body": "<userDetails><isValidToken>true</isValidToken><userId>11</userId><firstName>User</firstName><lastName>Name</lastName><emailId>testuser11@email.com</emailId></userDetails>",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "url": "/.*",
+      "bodyPatterns": [
+            { "matches": ".*partner.*" }
+        ]
+    },
+    "response": {
+      "status": 200,
+      "bodyFile":"sample_stub/body_response_file.xml",
+      "body": "This body will be ignored as file is specified above.",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "url": "/.*",
+      "bodyPatterns": [
+            { "matches": ".*auctionSpecialist.*" }
+        ]
+    },
+    "response": {
+      "status": 200,
+      "body": "<userDetails><isValidToken>true</isValidToken><userId>13</userId><firstName>User</firstName><lastName>Name</lastName><emailId>testuser13@email.com</emailId></userDetails>",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "url": "/.*",
+      "bodyPatterns": [
+            { "matches": ".*eventManager.*" }
+        ]
+    },
+    "response": {
+      "status": 200,
+      "body": "<userDetails><isValidToken>true</isValidToken><userId>14</userId><firstName>User</firstName><lastName>Name</lastName><emailId>testuser14@email.com</emailId></userDetails>",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "url": "/.*",
+      "headers": {
+        "content-type":{
+          "equalTo":"application/json"
+        }
+      },
+      "bodyPatterns": [
+            { "matches": ".*auctioneer.*" },
+            { "doesNotMatch": ".*auctioneerM.*" }
+        ]
+    },
+    "response": {
+      "status": 200,
+      "body": "<userDetails><isValidToken>true</isValidToken><userId>15</userId><firstName>User</firstName><lastName>Name</lastName><emailId>testuser15@email.com</emailId></userDetails>",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "url": "/.*",
+      "bodyPatterns": [
+            { "matches": ".*customerCare.*" }
+        ]
+    },
+    "response": {
+      "status": 200,
+      "body": "<userDetails><isValidToken>true</isValidToken><userId>16</userId><firstName>User</firstName><lastName>Name</lastName><emailId>testuser16@email.com</emailId></userDetails>",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "url": "/.*",
+      "bodyPatterns": [
+            { "matches": ".*marketing.*" }
+        ]
+    },
+    "response": {
+      "status": 200,
+      "body": "<userDetails><isValidToken>true</isValidToken><userId>17</userId><firstName>User</firstName><lastName>Name</lastName><emailId>testuser17@email.com</emailId></userDetails>",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "url": "/.*",
+      "bodyPatterns": [
+            { "matches": ".*auctioneerManager.*" }
+        ]
+    },
+    "response": {
+      "status": 200,
+      "body": "<userDetails><isValidToken>true</isValidToken><userId>18</userId><firstName>User</firstName><lastName>Name</lastName><emailId>testuser18@email.com</emailId></userDetails>",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  }
+]
