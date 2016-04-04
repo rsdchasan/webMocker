@@ -1,7 +1,7 @@
 # webMocker
 1) Clone the repo<br>
 2) Add index.js file in the same repo with the below two lines in it,<br>
-	var mock_server = require('./mock_server')<br>
+	<t>var mock_server = require('./mock_server')<br>
 	mock_server.run()<br>
 3) create a folder name 'logs' in the current dir<br>
 4) start the server using the below command<br>
