@@ -1,12 +1,19 @@
 # webMocker
-1) Clone the repo<br>
-2) Add index.js file in the same repo with the below two lines in it,<br>
-	<t>var mock_server = require('./mock_server')<br>
-	mock_server.run()<br>
-3) create a folder name 'logs' in the current dir<br>
-4) start the server using the below command<br>
-	STUBFILE=sample_stub/stub.json PORT=8050 LOGDIR=logs node index.js<br>
-5) your server is up and running now.<br>
+<ol>
+<li>Clone the repo</li>
+<li>Add index.js file in the same repo with the below two lines in it,
+<ul>
+<li>var mock_server = require('./mock_server')</li>
+<li>mock_server.run()</li></ul>
+</li>
+<li>create a folder name 'logs' in the current dir</li>
+<li>start the server using the below command
+<ul>
+<li>STUBFILE=sample_stub/stub.json PORT=8050 LOGDIR=logs node index.js</li>
+</ul>
+</li>
+<li>your server is up and running now.</li>
+</ol>
 
 Sample commands to test the mock server<br>
 1)curl http://localhost:8050/heartbeat/<br>
