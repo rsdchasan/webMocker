@@ -107,7 +107,7 @@ function handleRequest(request, response){
     var request_method=request.method;
     var request_body = [];
     var request_header = [];
-    var fileName = config.STUBFILE;
+
     request.on('data', function(chunk) {
         request_body.push(chunk);
     });
@@ -117,7 +117,7 @@ function handleRequest(request, response){
         request_id=generate_guid()
         log_request(request,request_body);
         try {
-            stub_data_array = JSON.parse(fs.readFileSync(fileName, "UTF-8"));
+
             if (request.url.toLowerCase() == '/') {
                 return response.end('Your mocker is up and running!!');
             }
@@ -125,6 +125,10 @@ function handleRequest(request, response){
                 return response.end('OK!');
             }
             if (request.url.toLowerCase() == '/stubdata/') {
+                return response.end(JSON.stringify(stub_data_array));
+            }
+            if (request.url.toLowerCase() == '/addstubdata/') {
+                stub_data_array[stub_data_array.length]=JSON.parse(request_body)
                 return response.end(JSON.stringify(stub_data_array));
             }
             for (i = 0; i < stub_data_array.length; i++) {
@@ -179,5 +183,7 @@ exports.run = function () {
     server.listen(config.PORT, function(){
         //Callback triggered when server is successfully listening. Hurray!
         console.log("Server listening on: http://localhost:%s", config.PORT);
+        //Loading the stub file in memory
+        stub_data_array = JSON.parse(fs.readFileSync(config.STUBFILE, "UTF-8"));
     });
 }
